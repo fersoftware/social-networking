@@ -19,4 +19,4 @@ import "./like_toggle"
 // import "./comment_toggle"
 
 import $ from 'jquery';
-// global.$ = jQuery;
+global.$ = jQuery;

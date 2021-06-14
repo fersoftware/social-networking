@@ -1,0 +1,2 @@
+$("#post<%= @post.id%>-comments").prepend('<%= j render "comment_card", comment: @comment %>');
+$("text_area").val("");
