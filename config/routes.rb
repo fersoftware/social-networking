@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {registrations: 'users/registrations'}  
-  devise_for :admins, skip: %i[:registrations], controllers: {sessions: 'admins/sessions'}
-  
+  devise_for :users, controllers: {registrations: 'users/registrations'}
+  devise_for :admins, skip: [:registrations], controllers: {sessions: 'admins/sessions'}
+
   namespace :admin do
     root to: "home#index"
     resources :admins
@@ -27,5 +27,5 @@ Rails.application.routes.draw do
     post 'follow/:id', to: "subscriptions#follow", as: :follow
     post 'unfollow/:id', to: "subscriptions#unfollow", as: :unfollow
   end
-
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
